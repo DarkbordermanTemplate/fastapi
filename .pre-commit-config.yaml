@@ -1,0 +1,15 @@
+repos:
+  - repo: local
+    hooks:
+      - id: format
+        name: Code format
+        entry: inv integration.reformat
+        language: system
+        pass_filenames: false
+        always_run: true
+      - id: lint
+        name: Code lint
+        entry: inv integration.lint
+        language: system
+        pass_filenames: false
+        always_run: true
