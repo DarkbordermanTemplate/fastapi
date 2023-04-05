@@ -1,0 +1,15 @@
+name: Update Github repository information
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Update Github repo info
+        uses: Darkborderman/github-actions/github-repo-info@master
+        env:
+          JSON_PATH: metadata.json
+          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
